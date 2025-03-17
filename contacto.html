@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - La Ruca de los Monos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+        }
+
+        /* Header con logo */
+        .header {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/local.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 150px;
+            width: auto;
+        }
+
+        .header-title {
+            font-size: 3.5em;
+            text-align: center;
+        }
+
+        /* Sección de contacto */
+        .contacto-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contacto-info {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contacto-title {
+            font-size: 2em;
+            color: #f0a500;
+            margin-bottom: 30px;
+        }
+
+        .contacto-item {
+            margin-bottom: 25px;
+        }
+
+        .contacto-item h3 {
+            color: #f0a500;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .contacto-item p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .instagram-button {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .facebook-button {
+            background: #1877f2;
+            color: white;
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Formulario de contacto */
+        .contacto-form {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .whatsapp-content {
+            margin-top: 30px;
+        }
+
+        .whatsapp-text {
+            color: #e0e0e0;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.4em;
+        }
+
+        @media (max-width: 768px) {
+            .contacto-section {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                height: 200px;
+            }
+
+            .header-title {
+                font-size: 2.5em;
+            }
+
+            .logo {
+                height: 100px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-button {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con logo -->
+    <header class="header">
+        <img src="images/prueba.png" alt="La Ruca de los Monos" class="logo">
+        <h1 class="header-title">Contáctanos</h1>
+    </header>
+
+    <!-- Sección de contacto -->
+    <section class="contacto-section">
+        <div class="contacto-info">
+            <h2 class="contacto-title">Información de Contacto</h2>
+            
+            <div class="contacto-item">
+                <h3>Dirección</h3>
+                <p>Esmeralda 1383 Arica</p>
+            </div>
+
+            <div class="contacto-item">
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Domingo de 20:00 a 03:00 hrs.</p>
+            </div>
+
+            <div class="contacto-item">
+                <h3>Teléfono</h3>
+                <p>+56 9 4005 9527</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/la_rucadelosmonos/" 
+                   class="social-button instagram-button" 
+                   target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+                <a href="https://www.facebook.com/tattiana.tudela.3" 
+                   class="social-button facebook-button" 
+                   target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+            </div>
+        </div>
+
+        <div class="contacto-form">
+            <h2 class="contacto-title">Contáctanos por WhatsApp</h2>
+            <div class="whatsapp-content">
+                <p class="whatsapp-text">Escríbenos directamente a nuestro WhatsApp para hacer tu pedido o consultar cualquier duda</p>
+                <a href="https://api.whatsapp.com/send?phone=56940059527&text=Hola%20buenas%20noches%20%20estan%20atendiendo?" 
+                   class="whatsapp-button" 
+                   target="_blank"
+                   rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    Enviar mensaje por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

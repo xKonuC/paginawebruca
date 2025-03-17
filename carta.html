@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta - La Ruca de los Monos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+        }
+
+        .header {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/local.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-info {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .delivery-info h2 {
+            color: #f0a500;
+            margin: 0;
+        }
+
+        .phone {
+            color: #25D366;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .menu-section {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            color: #f0a500;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .menu-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            color: #f0a500;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-price {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .item-description {
+            color: #e0e0e0;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .extras-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .extras-column {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .extras-title {
+            color: #f0a500;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .extras-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .extras-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: 200px;
+            }
+
+            .logo {
+                height: 100px;
+            }
+
+            .menu-section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/prueba.png" alt="La Ruca de los Monos" class="logo">
+        <div class="delivery-info">
+            <h2>DELIVERY</h2>
+            <a href="tel:+56940940404" class="phone">
+                <i class="fas fa-phone"></i> +569 4094 0404
+            </a>
+        </div>
+    </header>
+
+    <div class="menu-container">
+        <!-- Sección Sándwiches -->
+        <section class="menu-section">
+            <h2 class="section-title">Sándwiches</h2>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    Gordita <span class="item-price">$5.000</span>
+                </div>
+                <div class="item-description">
+                    Salchichas xl, tomate, palta, mayo, papas fritas
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Tortuga <span class="item-price">$4.500</span>
+                </div>
+                <div class="item-description">
+                    Salchicha, tomate, palta, mayo, chucrut
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Rucana <span class="item-price">$5.800</span>
+                </div>
+                <div class="item-description">
+                    Longaniza, queso, huevo, cebolla, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Lomito de Cerdo <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Lomito, tomate, palta, mayo, lechuga
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Sándwich de Pecado <span class="item-price">$7.000</span>
+                </div>
+                <div class="item-description">
+                    Reineta, cebolla, lechuga, tomate, pepinillo, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Vegetariano <span class="item-price">$4.800</span>
+                </div>
+                <div class="item-description">
+                    Lechuga, tomate, palta, papas fritas, lactonesa
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Hamburguesa Vegana <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Hamburguesa de garbanzo, tomate, palta, lechuga, mayo vegana
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Lucaso Queso Huevo <span class="item-price">$6.000</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, tomate, palta, huevo, queso, papas fritas, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Lucaso Huevo <span class="item-price">$5.800</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, tomate, palta, huevo, papas fritas, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Lucaso Queso <span class="item-price">$5.800</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, tomate, palta, queso, papas fritas, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    La Ruca de los Monos <span class="item-price">$7.000</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, filete de pollo, tocino, queso, cebolla, huevo, palta, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Ave Completa <span class="item-price">$5.000</span>
+                </div>
+                <div class="item-description">
+                    Filete de pollo, tomate, palta, mayo, lechuga
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Ave Luco <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Filete de pollo, queso
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Americano <span class="item-price">$5.800</span>
+                </div>
+                <div class="item-description">
+                    Filete de pollo, huevo, jamón, queso, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Mechada <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Mechada, tomate, palta, mayo, lechuga
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Mechada Luco <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Mechada, queso
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Hamburguesa Casera <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Hamburguesa, tomate, palta, lechuga, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Hamburguesa Criolla <span class="item-price">$7.000</span>
+                </div>
+                <div class="item-description">
+                    Hamburguesa, palta, lechuga, tomate, mayo, cebolla, huevo, queso, tocino, papas fritas
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Hamburguesa Luco <span class="item-price">$5.500</span>
+                </div>
+                <div class="item-description">
+                    Hamburguesa, queso
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Churrasco <span class="item-price">$4.800</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, tomate, mayo, palta, lechuga
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Churrasco a lo Pobre <span class="item-price">$6.000</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, mayo, huevo, cebolla, papas fritas
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Barros Luco <span class="item-price">$4.500</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, queso
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Chacarero <span class="item-price">$5.300</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, poroto verde, ají, tomate, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Rucaso <span class="item-price">$5.800</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, tocino, queso, cebolla, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Diputado <span class="item-price">$4.600</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, huevo, mayo
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Brasileño <span class="item-price">$4.800</span>
+                </div>
+                <div class="item-description">
+                    Churrasco, palta, queso, mayo
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Tablas -->
+        <section class="menu-section">
+            <h2 class="section-title">Tablas</h2>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    Pichanga x2 <span class="item-price">$11.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Pichanga x4 <span class="item-price">$16.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Pichanga x6 <span class="item-price">$23.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Chorrillana x2 <span class="item-price">$12.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Chorrillana x4 <span class="item-price">$18.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Chorrillana x6 <span class="item-price">$24.000</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Champi -->
+        <section class="menu-section">
+            <h2 class="section-title">Champi</h2>
+            
+            <div class="menu-subsection">
+                <h3 class="subsection-title">Champi Camarón</h3>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x2 <span class="item-price">$11.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x4 <span class="item-price">$16.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x6 <span class="item-price">$21.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-subsection">
+                <h3 class="subsection-title">Champi Pulpo</h3>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x2 <span class="item-price">$11.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x4 <span class="item-price">$16.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x6 <span class="item-price">$21.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-subsection">
+                <h3 class="subsection-title">Champi Pollo Carne</h3>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x2 <span class="item-price">$12.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x4 <span class="item-price">$17.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        x6 <span class="item-price">$23.000</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Extras -->
+        <section class="menu-section">
+            <h2 class="section-title">Agregados y Salsas</h2>
+            <div class="extras-section">
+                <div class="extras-column">
+                    <h3 class="extras-title">Agregados $1.000</h3>
+                    <ul class="extras-list">
+                        <li class="extras-item">Tocino</li>
+                        <li class="extras-item">Queso</li>
+                        <li class="extras-item">Papas Fritas</li>
+                    </ul>
+                </div>
+                
+                <div class="extras-column">
+                    <h3 class="extras-title">Agregados $500</h3>
+                    <ul class="extras-list">
+                        <li class="extras-item">Cebolla</li>
+                        <li class="extras-item">Ají Verde</li>
+                        <li class="extras-item">Champiñones</li>
+                        <li class="extras-item">Huevo</li>
+                        <li class="extras-item">Lechuga</li>
+                        <li class="extras-item">Pepinillo</li>
+                        <li class="extras-item">Palta</li>
+                        <li class="extras-item">Poroto Verde</li>
+                    </ul>
+                </div>
+
+                <div class="extras-column">
+                    <h3 class="extras-title">Salsas Adicionales $400</h3>
+                    <ul class="extras-list">
+                        <li class="extras-item">Aceitunas</li>
+                        <li class="extras-item">Ajo Vinagreta</li>
+                        <li class="extras-item">Rocoto</li>
+                        <li class="extras-item">Cilantro</li>
+                        <li class="extras-item">Tártara</li>
+                        <li class="extras-item">Mostaza</li>
+                        <li class="extras-item">Ketchup</li>
+                        <li class="extras-item">Pebre</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Adicionales -->
+        <section class="menu-section">
+            <h2 class="section-title">Adicionales</h2>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    Salchipapas <span class="item-price">$4.000</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Papas Fritas <span class="item-price">$3.500</span>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">
+                    Bebida 1.5L <span class="item-price">$2.500</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
