@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta Comida Rápida - La Ruca de los Monos</title>
+    <title>Carta de Desayuno - La Ruca de los Monos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -13,6 +13,7 @@
             background-color: #000;
             color: white;
         }
+
         .header {
             position: relative;
             height: 300px;
@@ -22,10 +23,12 @@
             text-align: center;
             padding: 20px;
         }
+
         .logo {
             height: 150px;
             margin-bottom: 20px;
         }
+
         .delivery-info {
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             padding: 20px;
@@ -33,21 +36,25 @@
             display: inline-block;
             margin-top: 20px;
         }
+
         .delivery-info h2 {
             color: #f0a500;
             margin: 0;
         }
+
         .phone {
             color: #25D366;
             font-size: 1.5em;
             font-weight: bold;
             text-decoration: none;
         }
+
         .menu-container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
+
         .menu-section {
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             border-radius: 20px;
@@ -55,20 +62,24 @@
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+
         .section-title {
             color: #f0a500;
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
         }
+
         .menu-item {
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .menu-item:last-child {
             border-bottom: none;
         }
+
         .item-name {
             color: #f0a500;
             font-size: 1.2em;
@@ -78,11 +89,13 @@
             align-items: center;
             width: 100%;
         }
+
         .item-left {
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .item-price {
             color: #fff;
             font-weight: bold;
@@ -90,11 +103,22 @@
             min-width: 80px;
             text-align: right;
         }
+
         .item-description {
             color: #e0e0e0;
             font-size: 0.9em;
             font-style: italic;
         }
+
+        .opcion-tag {
+            background: #f0a500;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
         .back-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -105,47 +129,59 @@
             margin-top: 20px;
             transition: background 0.3s;
         }
+
         .back-btn:hover {
             background: #ff8c00;
         }
+
         .loading {
             text-align: center;
             padding: 20px;
             color: #f0a500;
             font-size: 1.2em;
         }
+
         @media (max-width: 768px) {
             .header {
                 height: 200px;
             }
+
             .logo {
                 height: 100px;
             }
+
             .menu-container {
                 padding: 0 5px;
             }
+
             .menu-section {
                 padding: 12px 5px;
                 margin-bottom: 18px;
             }
+
             .section-title {
                 font-size: 1.2em;
             }
+
             .item-name {
                 font-size: 1em;
                 gap: 2px;
             }
+
             .item-price {
                 font-size: 1em;
             }
+
             .item-description {
                 font-size: 0.85em;
             }
+
             .back-btn {
                 padding: 8px 12px;
                 font-size: 0.95em;
             }
         }
+
         @media (max-width: 480px) {
             .header {
                 height: 120px;
@@ -191,26 +227,34 @@
             </a>
         </div>
     </header>
+
     <div class="menu-container">
         <div id="menu-content">
             <div class="loading">
                 <i class="fas fa-spinner fa-spin"></i> Cargando menú...
             </div>
         </div>
+
         <a href="index.html" class="back-btn">
             <i class="fas fa-arrow-left"></i> Volver al inicio
         </a>
     </div>
+
     <script>
+        // Función para formatear el precio
         function formatPrice(price) {
+            // Asegura que el precio sea un número y lo formatea con separador de miles sin decimales
             return '$' + Number(price).toLocaleString('es-CL');
         }
+
+        // Función para crear el HTML de un item del menú
         function createMenuItem(item) {
             return `
                 <div class="menu-item">
                     <div class="item-name">
                         <div class="item-left">
                             ${item.nombre}
+                            ${item.opciones ? `<span class="opcion-tag">${item.opciones}</span>` : ''}
                         </div>
                         <span class="item-price">${formatPrice(item.precio)}</span>
                     </div>
@@ -222,6 +266,8 @@
                 </div>
             `;
         }
+
+        // Función para crear el HTML de una sección del menú
         function createMenuSection(categoria, items) {
             return `
                 <section class="menu-section">
@@ -230,11 +276,15 @@
                 </section>
             `;
         }
-        fetch('get_menu_comida_rapida.php')
+
+        // Cargar los datos del menú
+        fetch('get_menu_desayuno.php')
             .then(response => response.json())
             .then(data => {
                 const menuContent = document.getElementById('menu-content');
                 menuContent.innerHTML = '';
+
+                // Ordenar los items de cada categoría por precio ascendente
                 for (const [categoria, items] of Object.entries(data)) {
                     items.sort((a, b) => Number(a.precio) - Number(b.precio));
                     menuContent.innerHTML += createMenuSection(categoria, items);
@@ -250,4 +300,4 @@
             });
     </script>
 </body>
-</html> 
+</html>
